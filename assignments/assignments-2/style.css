@@ -1,10 +1,36 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: cursive;
 }
 
-body{
-    position: relative;
+body {
+    background-color: #1e1e1e;
+
+}
+
+nav{
+
+}
+
+.nav-links {
+
+}
+
+.nav-links a {
+
+}
+
+.nav-links a:hover, .nav-links a.active {
+
+}
+
+header {
+
+}
+
+h2, h3, p {
+    text-align: center;
+    color: whitesmoke;
 }
