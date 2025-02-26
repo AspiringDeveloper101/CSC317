@@ -95,3 +95,9 @@ h1 {
     letter-spacing: var(--letter-spacing-wide);
     margin-bottom: var(--spacing-sm);
 }
+
+.subtitle {
+    color:var(--color-text-secondary);
+    font-size: var(--font-size-base);
+    letter-spacing: var(--letter-spacing-tight);
+}
