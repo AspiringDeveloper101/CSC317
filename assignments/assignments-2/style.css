@@ -51,7 +51,7 @@ body {
 nav {
     background-color: var(--color-surface);
     /* navigation bar size */
-    padding: var(--spacing-sm);
+    padding: var(--spacing-sm --spacing-xxl);
     border-radius: var(--border-radius-sm);
     /* spacing of the bootom of the navigation bar */
     margin-bottom: var(--spacing-xl);
