@@ -110,3 +110,11 @@ section {
     box-shadow: 0 4px 15px rgba(0, 0, 0.3);
     text-align: center;
 }
+
+.info {
+    color: var(--color-text-primary);
+    border-bottom: 2px solid var(--color-text-primary);
+    padding-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-xl);
+}
