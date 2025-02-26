@@ -57,6 +57,13 @@ nav {
     margin-bottom: var(--spacing-xl);
     /* shadow of navigation bar */
     box-shadow: 0 4px 15px rgba(0, 0, 0.3);
-    text-align: center;
 }
 
+.navigation-links {
+    display: flex;
+    justify-content: center;
+    /* spacing between navigation links */
+    gap: var(--spacing-xxl);
+    flex-wrap: wrap;
+    list-style: none;
+}
