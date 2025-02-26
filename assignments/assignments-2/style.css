@@ -124,7 +124,9 @@ section {
     height: 200px;
     border-radius: var(--border-radius-pill);
     margin-bottom: var(--space-blue);
-    align-content: center;
 }
 
-
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
