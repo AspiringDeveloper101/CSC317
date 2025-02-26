@@ -89,3 +89,9 @@ header {
     margin-bottom: var(--spacing-xl);
     box-shadow: 0 4px 15px rgba(0, 0, 0.3);
 }
+
+h1 {
+    font-size: var(--font-size-xxl);
+    letter-spacing: var(--letter-spacing-wide);
+    margin-bottom: var(--spacing-sm);
+}
