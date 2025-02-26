@@ -67,3 +67,7 @@ nav {
     flex-wrap: wrap;
     list-style: none;
 }
+
+.navigation-links a {
+    color: var(--color-text-primary);
+}
