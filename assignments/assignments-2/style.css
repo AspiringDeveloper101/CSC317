@@ -70,4 +70,9 @@ nav {
 
 .navigation-links a {
     color: var(--color-text-primary);
+    text-decoration: none;
+    padding: var(--spacing-xs);
+    border-radius: var(--border-radius-pill);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
