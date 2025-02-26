@@ -118,3 +118,13 @@ section {
     margin-bottom: var(--spacing-md);
     font-size: var(--font-size-xl);
 }
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: var(--border-radius-pill);
+    margin-bottom: var(--space-blue);
+    align-content: center;
+}
+
+
