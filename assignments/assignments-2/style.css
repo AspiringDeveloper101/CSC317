@@ -44,5 +44,33 @@ body {
     color: var(--color-text-primary);
     max-width: 1200px;
     margin: 0 auto;
+    /* spacing from body border against edge */
     padding: var(--spacing-md);
+}
+
+nav {
+    background-color: var(--color-surface);
+    /* navigation bar size */
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    /* spacing of the bootom of the navigation bar */
+    margin-bottom: var(--spacing-xl);
+    /* shadow of navigation bar */
+    box-shadow: 0 4px 15px rgba(0, 0, 0.3);
+}
+
+.navigation-links {
+    display: flex;
+    justify-content: center;
+    /* huh? */
+    gap: var(--spacing-md);
+    /* huh? */
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.navigation-links a {
+    color: var(--color-text-primary);
+    text-decoration: none;
+    padding: var(--spacing-xxl); 
 }
