@@ -80,3 +80,12 @@ nav {
 .navigation-links a:hover {
     color: var(--color-primary);
 }
+
+header {
+    text-align: center;
+    padding: var(--spacing-xxl);
+    background-color: var(--color-surface);
+    border-radius: var(--border-radius-sm);
+    margin-bottom: var(--spacing-xl);
+    box-shadow: 0 4px 15px rgba(0, 0, 0.3);
+}
