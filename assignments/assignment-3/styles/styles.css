@@ -6,6 +6,7 @@
     --primary-font-style: cursive;
     --base-line-height: 1.6;
     --border-color: solid white;
+    --shadow-color: #141414;
 }
 
 * {
@@ -40,12 +41,39 @@ header {
     color: var(--secondary-text-color);
 }
 
-nav {
+a {
+    color: var(--primary-text-color);
+    text-decoration: none;
+}
 
+a:hover {
+    color: var(--secondary-text-color);
+}
+
+nav {
+    background-color: var(--secondary-background-color);
+    padding: 15px 60px;
+    position: sticky;
+    top: 0;
 }
 
 .navigation-links {
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    flex-wrap: wrap;
+    list-style: none;
+}
 
+.navigation-links a {
+    color: var(--primary-text-color);
+    padding: 10px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.navigation-links a:hover {
+    color: var(--secondary-text-color);
 }
 
 main {
