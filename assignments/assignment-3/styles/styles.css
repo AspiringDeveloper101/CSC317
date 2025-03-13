@@ -120,6 +120,16 @@ section {
     font-size: var(--font-size-xl);
 }
 
+#skills h2 {
+    font-size: var(--font-size-xxl);
+    padding-bottom: var(--h2-and-p-padding);
+}
+
+#projects h2 {
+    font-size: var(--font-size-xxl);
+    padding-bottom: var(--h2-and-p-padding);
+}
+
 .SF-State {
     padding-bottom: var(--h2-and-p-padding);
 }
