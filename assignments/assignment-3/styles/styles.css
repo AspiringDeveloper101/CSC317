@@ -12,6 +12,7 @@
     --font-size-lg: 1.3em;
     --font-size-xl: 1.8em;
     --font-size-xxl: 2.5em;
+    --h2-and-p-padding: 15px;
 }
 
 * {
@@ -31,6 +32,10 @@ header {
     background-color: var(--secondary-background-color);
     text-align: center;
     padding: 10rem 1rem;
+}
+
+header h1 {
+    font-size: var(--font-size-xxl);
 }
 
 .profile-img {
@@ -95,6 +100,11 @@ section {
 
 #bio {
     padding-top: 100px;
+}
+
+#bio h2 {
+    font-size: var(--font-size-xxl);
+    padding-bottom: var(--h2-and-p-padding);
 }
 
 .list-of-skills {
