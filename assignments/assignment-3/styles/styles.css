@@ -8,6 +8,10 @@
     --border-color: solid white;
     --shadow-color: #0a0a0a;
     --text-gap: 6rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.3em;
+    --font-size-xl: 1.8em;
+    --font-size-xxl: 2.5em;
 }
 
 * {
@@ -83,6 +87,10 @@ main {
 
 section {
     margin-bottom: 125px;
+}
+
+#bio {
+    padding-top: 100px;
 }
 
 .list-of-skills {
