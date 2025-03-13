@@ -1,14 +1,17 @@
 :root {
-
-
+    --primary-text-color: white;
+    --secondary-text-color: #b0b0b0;
+    --primary-backgorund-color: #141414;
+    --secondary-background-color: #292929;
 }
 
 * {
-
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
 }
 
 body {
-
 }
 
 header {
