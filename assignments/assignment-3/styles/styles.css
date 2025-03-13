@@ -130,6 +130,10 @@ section {
     padding-bottom: var(--h2-and-p-padding);
 }
 
+#projects h3 {
+    font-size: var(--font-size-xl);
+}
+
 .SF-State {
     padding-bottom: var(--h2-and-p-padding);
 }
@@ -155,17 +159,26 @@ section {
 }
 
 .project-template {
-
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: var(--text-gap);
 }
 
 .project-box {
-
+    background-color: var(--secondary-background-color);
+    box-shadow: 1px 3px var(--shadow-color);
+    padding: 1rem;
+    transition: all 0.3s ease;
 }
 
 .project-box:hover {
+    transform: translateY(-5px);
+}
 
+.project-box h3 {
+    margin-bottom: var(--h2-and-p-padding);
 }
 
 footer {
-
+    text-align: center;
 }
