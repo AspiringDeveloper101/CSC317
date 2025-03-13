@@ -3,6 +3,8 @@
     --secondary-text-color: #b0b0b0;
     --primary-backgorund-color: #141414;
     --secondary-background-color: #292929;
+    --primary-font-style: cursive;
+    --base-line-height: 1.6;
 }
 
 * {
@@ -12,6 +14,10 @@
 }
 
 body {
+    font-family: var(--primary-font-style);
+    line-height: var(--base-line-height);
+    background: var(--primary-backgorund-color);
+    color: var(--primary-text-color);
 }
 
 header {
