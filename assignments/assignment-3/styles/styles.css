@@ -107,6 +107,23 @@ section {
     padding-bottom: var(--h2-and-p-padding);
 }
 
+#education {
+    padding-top: 100px;
+}
+
+#education h2 {
+    font-size: var(--font-size-xxl);
+    padding-bottom: var(--h2-and-p-padding);
+}
+
+#education h3 {
+    font-size: var(--font-size-xl);
+}
+
+.SF-State {
+    padding-bottom: var(--h2-and-p-padding);
+}
+
 .list-of-skills {
     display: flex;
     flex-wrap: wrap;
