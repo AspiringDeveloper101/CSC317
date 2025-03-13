@@ -6,7 +6,8 @@
     --primary-font-style: cursive;
     --base-line-height: 1.6;
     --border-color: solid white;
-    --shadow-color: #141414;
+    --shadow-color: #0a0a0a;
+    --text-gap: 6rem;
 }
 
 * {
@@ -60,7 +61,7 @@ nav {
 .navigation-links {
     display: flex;
     justify-content: center;
-    gap: 6rem;
+    gap: var(--text-gap);
     flex-wrap: wrap;
     list-style: none;
 }
@@ -85,15 +86,23 @@ section {
 }
 
 .list-of-skills {
-
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--text-gap);
+    list-style: none;
 }
 
 .list-of-skills li {
-
+    background-color: var(--secondary-background-color);
+    padding: 15px;
+    margin-top: 15px;
+    box-shadow: 1px 3px var(--shadow-color);
+    transition: all 0.3s ease;
 }
 
 .list-of-skills li:hover {
-
+    background-color: #333333;
+    transform: translateY(-5px);
 }
 
 .project-template {
