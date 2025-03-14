@@ -73,7 +73,7 @@ nav {
     top: 0;
     z-index: 999;
     /* box shadow size requirements from ai-1.css nav{} and shadow color from styles.css */
-    box-shadow: 0 2px 5px rgba(var(--shadow-color));
+    box-shadow: 0 2px 5px var(--shadow-color);
     /* From styles.css */
     background-color: var(--secondary-background-color);
 }
