@@ -1,0 +1,137 @@
+ /* General Styles */
+   body {
+       font-family: 'Arial', sans-serif; /* Easy to read font */
+       background-color: #1c1c1c; /* Dark background for zombie theme */
+       color: #e0e0e0; /* Light text color for contrast */
+       margin: 0;
+       padding: 0;
+       line-height: 1.6;
+   }
+
+/* Navigation Bar */
+nav {
+    background-color: #333; /* Dark background for nav */
+    color: #fff; /* White text */
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s; /* Smooth hover effect */
+}
+
+nav a:hover {
+    color: #ff6347; /* Hover color */
+}
+
+/* Header/Intro Section */
+header {
+    background-color: #2e2e2e; /* Slightly lighter background */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+/* About Me Section */
+#about {
+    padding: 50px 20px;
+    background-color: #1c1c1c;
+}
+
+#about h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Education Section */
+#education {
+    padding: 50px 20px;
+    background-color: #2e2e2e;
+}
+
+#education h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Projects Section */
+#projects {
+    padding: 50px 20px;
+    background-color: #1c1c1c;
+}
+
+#projects h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Contact Form */
+#contact {
+    padding: 50px 20px;
+    background-color: #2e2e2e;
+}
+
+#contact h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input, form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+form input[type="submit"] {
+    background-color: #ff6347; /* Button color */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth hover effect */
+}
+
+form input[type="submit"]:hover {
+    background-color: #e5533d; /* Hover color */
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    header, #about, #education, #projects, #contact {
+        padding: 30px 10px;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    #about h2, #education h2, #projects h2, #contact h2 {
+        font-size: 1.5em;
+    }
+}
