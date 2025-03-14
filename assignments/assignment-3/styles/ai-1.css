@@ -1,137 +1,402 @@
- /* General Styles */
-   body {
-       font-family: 'Arial', sans-serif; /* Easy to read font */
-       background-color: #1c1c1c; /* Dark background for zombie theme */
-       color: #e0e0e0; /* Light text color for contrast */
-       margin: 0;
-       padding: 0;
-       line-height: 1.6;
-   }
+/* 
+  ===============================
+  Root Variables & Base Settings
+  ===============================
+  - We define our Mario-inspired color palette, fonts, and spacing here.
+  - These CSS variables make it easy to maintain and adjust the theme.
+*/
+:root {
+    /* Mario-Inspired Color Palette */
+    --mario-red: #FF0000;        /* Mario's iconic red */
+    --mario-blue: #4169E1;       /* Bright, royal-like blue (overalls) */
+    --coin-gold: #FFD700;        /* Gold coin color */
+    --pipe-green: #228B22;       /* Green pipe color */
+    --cloud-white: #F8F8F8;      /* Soft white for backgrounds */
+    --text-color: #333333;       /* Dark text for easy readability */
 
-/* Navigation Bar */
-nav {
-    background-color: #333; /* Dark background for nav */
-    color: #fff; /* White text */
-    padding: 10px 0;
-    text-align: center;
+    /* Typography (using modern, clean fonts for readability) */
+    --heading-font: "Montserrat", sans-serif;
+    --body-font: "Open Sans", sans-serif;
+
+    /* Spacing & Layout */
+    --section-padding: 80px;        /* Large section padding for desktops */
+    --section-padding-mobile: 40px; /* Smaller section padding for mobile */
+
+    /* Transition Speed for Hover Animations */
+    --transition-speed: 0.3s;
 }
 
-nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 15px;
-    transition: color 0.3s; /* Smooth hover effect */
-}
-
-nav a:hover {
-    color: #ff6347; /* Hover color */
-}
-
-/* Header/Intro Section */
-header {
-    background-color: #2e2e2e; /* Slightly lighter background */
-    padding: 50px 20px;
-    text-align: center;
-}
-
-header h1 {
-    font-size: 2.5em;
+/*
+  ===============
+  Global Resets
+  ===============
+  - Reset default margin/padding.
+  - Use box-sizing: border-box to simplify sizing calculations.
+*/
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* About Me Section */
-#about {
-    padding: 50px 20px;
-    background-color: #1c1c1c;
+/*
+  Smooth scrolling for anchor links.
+  Improves user experience when jumping between sections.
+*/
+html {
+    scroll-behavior: smooth;
 }
 
-#about h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+/*
+  ===========================
+  Body & Basic Typography
+  ===========================
+  - The main body background is a light "cloud-white" to evoke
+    the bright Mario sky background.
+  - We use a dark text color for good contrast.
+*/
+body {
+    font-family: var(--body-font);
+    background-color: var(--cloud-white);
+    color: var(--text-color);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden; /* Prevent horizontal overflow on small screens */
 }
 
-/* Education Section */
-#education {
-    padding: 50px 20px;
-    background-color: #2e2e2e;
+/* Headings (use heading font and color them black for clarity) */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    color: var(--text-color);
+    margin-bottom: 16px;
 }
 
+/* Paragraphs use a slightly darker text color for readability */
+p {
+    margin-bottom: 1rem;
+}
+
+/*
+  We add some horizontal padding to main layout elements
+  so content doesn't bump against screen edges.
+*/
+header, nav, main, footer {
+    padding: 0 15px;
+}
+
+/*
+  ===========================
+  Header / Intro Section
+  ===========================
+  - A fun, bright background to mimic Mario's cheerful world.
+*/
+header {
+    min-height: 50vh; /* Takes at least half the viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* Gradient from Mario red to a softer top */
+    background: linear-gradient(
+            to bottom,
+            var(--mario-red) 0%,
+            #FF6347 80%  /* Slightly lighter red/ orange transition */
+    );
+    color: #fff; /* White text in the header for contrast */
+    margin-bottom: 2rem;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+/* Profile image: Round shape, slight border to pop off the background */
+header .profile-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--coin-gold);
+    margin-bottom: 1rem;
+}
+
+/* Main heading in the header */
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Subtitle text in the header */
+header .subtitle {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/*
+  ===========================
+  Navigation Bar
+  ===========================
+  - Sticky navigation with bright Mario red background.
+  - Smooth hover transitions and color changes.
+*/
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 999; /* Ensure nav stays above other elements when scrolling */
+    background-color: var(--mario-red);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Navigation links container: centered and spaced */
+.navigation-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; /* Space out each link */
+    height: 60px;
+}
+
+/* Individual nav links: uppercase, gold highlight on hover */
+.navigation-links a {
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    position: relative;
+    transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+/*
+  Underline animation on hover:
+  - The ::before pseudo-element grows from 0 to 100% width.
+*/
+.navigation-links a::before {
+    content: "";
+    position: absolute;
+    bottom: -3px;  /* Position line just under the text */
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--coin-gold);
+    transition: width var(--transition-speed) ease;
+}
+
+/* Hover effect: color shift to coin-gold and slight scale */
+.navigation-links a:hover {
+    color: var(--coin-gold);
+    transform: scale(1.05);
+}
+
+.navigation-links a:hover::before {
+    width: 100%;
+}
+
+/*
+  ===========================
+  Main Sections
+  ===========================
+  - Each section uses ID selectors (bio, education, skills, projects).
+  - We provide vertical padding to separate them visually.
+*/
+
+/* Generic section styling for top-level sections */
+section {
+    padding: var(--section-padding) 0;
+}
+
+/* ========== Bio Section ========== */
+#bio h2 {
+    font-size: 2rem;
+    color: var(--mario-blue);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#bio p {
+    max-width: 800px;
+    margin: 0 auto; /* Center the text block */
+    font-size: 1rem;
+}
+
+/* ========== Education Section ========== */
 #education h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    color: var(--mario-blue);
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
-/* Projects Section */
+/* Classes for each institution; spaced out a bit */
+.SF-State,
+.Canada-College {
+    margin-bottom: 2rem;
+}
+
+/* Subheadings within Education get the pipe-green color */
+#education h3 {
+    color: var(--pipe-green);
+    margin-bottom: 0.5rem;
+}
+
+/* ========== Skills Section ========== */
+#skills {
+    background: #FAFAFA; /* Slightly lighter background for contrast */
+    text-align: center;
+}
+
+#skills h2 {
+    font-size: 2rem;
+    color: var(--mario-blue);
+    margin-bottom: 2rem;
+}
+
+/*
+  Skills list displayed as a horizontal (or wrapped) set of badges
+  reminiscent of the power-ups in Mario's world.
+*/
+.list-of-skills {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style-type: none;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+/* Individual skill items as "badges" */
+.list-of-skills li {
+    background: var(--mario-red);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background var(--transition-speed) ease;
+}
+
+/* Hover effect for skill badges: shift to coin-gold background */
+.list-of-skills li:hover {
+    background: var(--coin-gold);
+    color: #333;
+}
+
+/* ========== Projects Section ========== */
 #projects {
-    padding: 50px 20px;
-    background-color: #1c1c1c;
+    background: #F0F0F0; /* Another subtle variation from main background */
+    text-align: center;
 }
 
 #projects h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    color: var(--mario-blue);
+    margin-bottom: 2rem;
 }
 
-/* Contact Form */
-#contact {
-    padding: 50px 20px;
-    background-color: #2e2e2e;
+/*
+  Project container using CSS Grid for a flexible, responsive layout
+*/
+.project-template {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    max-width: 1000px;
+    margin: 0 auto; /* Center the grid container */
 }
 
-#contact h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+/*
+  Each project "box"
+  - Subtle shadow effect on hover to make them pop.
+*/
+.project-box {
+    background: #FFF;
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: box-shadow var(--transition-speed) ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+.project-box:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-form input, form textarea {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: none;
-    border-radius: 5px;
+.project-box h3 {
+    color: var(--pipe-green);
+    margin-bottom: 0.5rem;
 }
 
-form input[type="submit"] {
-    background-color: #ff6347; /* Button color */
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s; /* Smooth hover effect */
-}
-
-form input[type="submit"]:hover {
-    background-color: #e5533d; /* Hover color */
-}
-
-/* Footer */
+/*
+  ===========================
+  Footer
+  ===========================
+  - Simple, centered text with a background that ties into Mario's palette.
+*/
 footer {
-    background-color: #333;
+    background: var(--mario-red);
     color: #fff;
     text-align: center;
     padding: 20px 0;
+    margin-top: 2rem;
 }
 
-/* Responsive Layout */
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/*
+  ===========================
+  Responsive Media Queries
+  ===========================
+  - Adjust layout, font sizes, and spacing for tablets and phones.
+*/
+
+/*
+  At 992px and below, reduce some font sizes and spacing as needed.
+*/
+@media (max-width: 992px) {
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+/*
+  At 768px and below, we further adjust spacing,
+  reduce nav link gap, etc.
+*/
 @media (max-width: 768px) {
-    header, #about, #education, #projects, #contact {
-        padding: 30px 10px;
+    .navigation-links {
+        gap: 1rem;
     }
 
-    nav a {
-        display: block;
+    header .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Decrease section padding on smaller devices */
+    section {
+        padding: var(--section-padding-mobile) 0;
+    }
+}
+
+/*
+  At 480px and below, stack nav links vertically
+  and adjust text sizes to fit small screens.
+*/
+@media (max-width: 480px) {
+    .navigation-links {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .navigation-links a {
         margin: 10px 0;
     }
-}
 
-@media (max-width: 480px) {
     header h1 {
-        font-size: 2em;
-    }
-
-    #about h2, #education h2, #projects h2, #contact h2 {
-        font-size: 1.5em;
+        font-size: 1.5rem;
     }
 }
