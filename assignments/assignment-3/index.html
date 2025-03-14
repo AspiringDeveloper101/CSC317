@@ -4,7 +4,48 @@
     <meta charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serena Liu Portfolio</title>
-    <link rel="stylesheet" href="styles/styles.css" id="hand-written">
+    <link rel="stylesheet" href="styles/styles.css" id="css-theme">
+
+    <style>
+        .theme-switcher {
+            position: fixed;
+            bottom: 70px;
+            right: 50px;
+            background-color: #474747;
+            padding: 10px;
+            box-shadow: var(--shadow-border-padding) var(--shadow-color);
+            max-width: 300px;
+            z-index: 1000;
+        }
+
+        .theme-switcher h3 {
+            font-size: var(--font-size-lg);
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .theme-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.9rem;
+        }
+
+        .theme-button {
+            padding: 0.4rem 1rem;
+            background-color: white;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .theme-button:hover {
+            background-color: var(--secondary-text-color);
+        }
+
+        .theme-button.active {
+            background-color: var(--secondary-background-color);
+        }
+    </style>
 </head>
 <body>
     <header>
