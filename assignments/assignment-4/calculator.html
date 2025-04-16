@@ -5,48 +5,34 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Calculator</title>
         <link rel="stylesheet" href="styles/calculator.css">
+        <script src="scripts/calculator.js" defer></script>
     </head>
     <body>
         <div class = "calculator-container">
-            <div class="calculator" id="calculator">
-                <form>
-                    <div>
-                        <input type="text" id="display-screen" name="display-screen">
-                        <label for="display-screen"></label>
-                    </div>
-                </form>
-                <div>
-                    <button class="other">AC</button>
-                    <button class="other">+/-</button>
-                    <button class="other" id="percentage">%</button>
-                    <button class="operator">÷</button>
+                <div class="display">
+                    <div class="operation">124</div>
+                    <div class="result">4644666666666666</div>
                 </div>
-                <div class="second-row">
-                    <button class="number">7</button>
+                <button class="other">AC</button>
+                <button class="other">+/-</button>
+                <button class="other">%</button>
+                <button class="operator">÷</button>
+                <button class="number">7</button>
+                <button class="number">8</button>
+                <button class="number">9</button>
+                <button class="operator">x</button>
+                <button class="number">4</button>
+                <button class="number">5</button>
+                <button class="number">6</button>
+                <button class="operator">-</button>
+                <button class="number">1</button>
+                <button class="number">2</button>
+                <button class="number">3</button>
+                <button class="operator">+</button>
+                <button class="number" id="zero">0</button>
+                <button class="number">.</button>
+                <button class="operator">=</button>
 
-                    <button class="number" id="eight">8</button>
-                    <button class="number" id="nine">9</button>
-                    <button class="operator" id="times">x</button>
-                </div>
-                <div class="third-row">
-                    <button class="number">4</button>
-                    <button class="number" id="five">5</button>
-                    <button class="number" id="six">6</button>
-                    <button class="operator" id="minus">-</button>
-                </div>
-                <div class="fourth-row">
-                    <button class="number">1</button>
-                    <button class="number" id="two">2</button>
-                    <button class="number" id="three">3</button>
-                    <button class="operator" id="plus">+</button>
-                </div>
-                <div class="fifth-row">
-                    <button class="number" id="zero">0</button>
-                    <button class="number" id="period">.</button>
-                    <button class="operator" id="equal">=</button>
-                </div>
-            </div>
         </div>
-        <script src="scripts/calculator.js"></script>
     </body>
 </html>

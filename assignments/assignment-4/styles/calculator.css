@@ -15,49 +15,53 @@
     margin: 0;
     padding: 0;
     font-family: "Times New Roman", Times, serif;
-    font-size: 1rem;
-    box-sizing: content-box;
 }
 
 .calculator-container {
-    width: 100vw;
+    background-color: #000000;
     height: 100vh;
-    display: flex;
-    align-items: center;
+    display: grid;
     justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(4, 70px);
+    grid-template-rows: minmax(50px, auto) repeat(5, 70px);
+    gap: 25px;
 }
 
-.calculator {
-    background: #000000;
-    padding: var(--padding-size-sm);
-    border-radius: var(--rounded-corners);
-}
-
-input[type=text] {
-    height: 60px;
-    margin-top: 30px;
-    background: #000000;
-    border: none;
-    outline: none;
+.display {
+    background-color: black;
     color: var(--primary-text-color);
-    padding: var(--padding-size-sm);
+    grid-column: 1 / -1;
     text-align: right;
-    box-sizing: border-box;
+    padding: var(--padding-size-sm);
+    word-wrap: break-word;
+    word-break: break-all;
+    font-size: 35px;
 }
 
 button {
+    outline: none;
+    border:none;
     background-color: var(--background-color-other-buttons);
-    padding: var(--padding-size-m);
     border-radius: var(--circle-button);
-    margin: 3px;
-    border: none;
-    transition-duration: 0.4s;
+    font-size: 25px;
+}
+
+button:hover {
+    background-color: #98989898;
+}
+
+#zero {
+    padding: 15px;
+    grid-column: span 2;
+    border-radius: 50px;
 }
 
 .number {
     background-color: var(--background-color-number-buttons);
     padding: var(--padding-size-m) 20px var(--padding-size-m) 20px;
     color: var(--primary-text-color);
+    font-size: 25px;
 }
 
 .number:hover {
@@ -68,43 +72,9 @@ button {
     background-color: var(--background-color-operator-buttons);
     padding: var(--padding-size-m) 20px var(--padding-size-m) 20px;
     color: var(--primary-text-color);
+    font-size: 30px;
 }
 
 .operator:hover {
     background-color: #ffa329;
-}
-
-.other:hover {
-    background-color: #989898;
-}
-
-#percentage {
-    padding: var(--padding-size-m) 20px var(--padding-size-m) 20px;
-
-}
-
-.second-row, .third-row, .fourth-row, .fifth-row {
-    margin-left: 3px;
-    margin-top: 3px;
-}
-
-#eight, #five, #two {
-    margin-left: 8px;
-}
-
-#nine, #six, #three {
-    margin-left: 10px;
-}
-
-#times, #minus {
-    margin-left: 6px;
-}
-
-#zero {
-    width: 70px;
-    border-radius: 30px;
-}
-
-#period {
-    margin-left: 13px;
 }
