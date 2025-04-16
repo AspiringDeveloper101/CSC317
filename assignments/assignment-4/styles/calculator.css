@@ -45,29 +45,37 @@ input[type=text] {
     box-sizing: border-box;
 }
 
-Button {
+button {
+    background-color: var(--background-color-other-buttons);
     padding: var(--padding-size-m);
     border-radius: var(--circle-button);
     margin: 3px;
-}
-
-.other {
-    background-color: var(--background-color-other-buttons);
     border: none;
+    transition-duration: 0.4s;
 }
 
 .number {
     background-color: var(--background-color-number-buttons);
-    border: none;
     padding: var(--padding-size-m) 20px var(--padding-size-m) 20px;
     color: var(--primary-text-color);
 }
 
+.number:hover {
+    background-color: #262626;
+}
+
 .operator {
     background-color: var(--background-color-operator-buttons);
-    border: none;
     padding: var(--padding-size-m) 20px var(--padding-size-m) 20px;
     color: var(--primary-text-color);
+}
+
+.operator:hover {
+    background-color: #ffa329;
+}
+
+.other:hover {
+    background-color: #989898;
 }
 
 #percentage {
