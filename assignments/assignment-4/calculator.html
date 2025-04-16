@@ -4,44 +4,48 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Calculator</title>
+        <link rel="stylesheet" href="styles/calculator.css">
     </head>
     <body>
         <div class = "calculator-container">
-            <form>
+            <div class="calculator" id="calculator">
+                <form>
+                    <div>
+                        <input type="text" id="display-screen" name="display-screen">
+                        <label for="display-screen"></label>
+                    </div>
+                </form>
                 <div>
-                    <input type="text" id="display-screen" name="display-screen">
-                    <label for="display-screen"></label>
+                    <button class="other">AC</button>
+                    <button class="other">+/=</button>
+                    <button class="other" id="percentage">%</button>
+                    <button class="operator">÷</button>
                 </div>
-                <div>
-                    <input type="button" value="AC">
-                    <input type="button" value="+/-">
-                    <input type="button" value="%">
-                    <input type="button" value="÷">
+                <div class="second-row">
+                    <button class="number">7</button>
+
+                    <button class="number" id="eight">8</button>
+                    <button class="number" id="nine">9</button>
+                    <button class="operator" id="times">x</button>
                 </div>
-                <div>
-                    <input type="button" value="7">
-                    <input type="button" value="8">
-                    <input type="button" value="9">
-                    <input type="button" value="X">
+                <div class="third-row">
+                    <button class="number">4</button>
+                    <button class="number" id="five">5</button>
+                    <button class="number" id="six">6</button>
+                    <button class="operator" id="minus">-</button>
                 </div>
-                <div>
-                    <input type="button" value="4">
-                    <input type="button" value="5">
-                    <input type="button" value="6">
-                    <input type="button" value="-">
+                <div class="fourth-row">
+                    <button class="number">1</button>
+                    <button class="number" id="two">2</button>
+                    <button class="number" id="three">3</button>
+                    <button class="operator" id="plus">+</button>
                 </div>
-                <div>
-                    <input type="button" value="1">
-                    <input type="button" value="2">
-                    <input type="button" value="3">
-                    <input type="button" value="+">
+                <div class="fifth-row">
+                    <button class="number" id="zero">0</button>
+                    <button class="number" id="period">.</button>
+                    <button class="operator" id="equal">=</button>
                 </div>
-                <div>
-                    <input type="button" value="0">
-                    <input type="button" value=".">
-                    <input type="button" value="=">
-                </div>
-            </form>
+            </div>
         </div>
     </body>
 </html>
