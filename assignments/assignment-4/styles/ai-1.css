@@ -322,6 +322,12 @@ section {
     margin-bottom: 0.5rem;
 }
 
+.calculator-preview {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
 /*
   ===========================
   Footer

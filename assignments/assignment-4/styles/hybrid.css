@@ -277,6 +277,12 @@ section {
     margin-bottom: var(--h2-and-p-padding);
 }
 
+.calculator-preview {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
 footer {
     text-align: center;
     margin-bottom: 30px;

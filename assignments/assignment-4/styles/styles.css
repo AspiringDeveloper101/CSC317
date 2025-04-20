@@ -48,6 +48,12 @@ header h1 {
     margin-bottom: 1rem;
 }
 
+.calculator-preview {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
 .subtitle {
     color: var(--secondary-text-color);
 }
