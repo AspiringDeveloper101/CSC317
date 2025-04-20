@@ -93,3 +93,29 @@ button.pressed {
     transform: scale(1.1);
     background-color: rgba(255, 163, 41, 0.50);
 }
+
+nav {
+    background-color: #000000;
+    padding: 15px 60px 30px 60px;
+    position: sticky;
+}
+
+.Back-to-portfolio-link {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.Back-to-portfolio-link a {
+    color: var(--primary-text-color);
+    position: relative;
+}
+
+.Back-to-portfolio-link a:hover {
+    color: #b0b0b0;
+}
+
+a {
+    text-decoration: none;
+}
