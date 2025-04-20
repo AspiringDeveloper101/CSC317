@@ -1,0 +1,410 @@
+/*
+  ============================
+  Root Variables & Base Setup
+  ============================
+  - Here we define our color palette, font families, and spacing as CSS variables.
+  - This makes it easier to maintain and tweak the design in one central place.
+*/
+:root {
+    /* Colors inspired by the bridge's orange lights & the dark sky */
+    --bg-color: #0D0D0D;           /* Dark background for a moody feel */
+    --text-color: #F2F2F2;         /* Light text color for readability */
+    --muted-text-color: #BBBBBB;   /* Slightly muted text color for paragraphs */
+    --primary-color: #FF4500;      /* Vibrant orange (bridge lights) */
+    --secondary-color: #FF8C00;    /* Secondary orange accent */
+
+    /* Typography */
+    --heading-font: "Montserrat", sans-serif;
+    --body-font: "Open Sans", sans-serif;
+
+    /* Spacing & Layout */
+    --section-padding: 80px;            /* Large section padding (desktop) */
+    --section-padding-mobile: 40px;     /* Smaller section padding (mobile) */
+
+    /* Transition Speed for Hover Animations */
+    --transition-speed: 0.3s;
+}
+
+/*
+  Reset some default browser styles and ensure a consistent box model.
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*
+  Smooth scrolling for anchor links and a clean text-rendering setup.
+*/
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden; /* Prevent horizontal overflow on small screens */
+}
+
+/*
+  Headings and Paragraphs
+  - We use the heading font for all headings.
+  - We give paragraphs a muted text color for subtlety.
+*/
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    color: var(--text-color);
+    margin-bottom: 16px;
+}
+
+p {
+    color: var(--muted-text-color);
+    margin-bottom: 1rem;
+}
+
+/*
+  Add some horizontal padding to major layout elements
+  so the content doesn't touch the screen edges.
+*/
+header, nav, main, footer {
+    padding: 0 15px;
+}
+
+/*
+  ============================
+  Header / Intro Section
+  ============================
+  - A gradient background inspired by the dark sky and orange glow.
+  - Centered content with a large hero area.
+*/
+header {
+    min-height: 50vh; /* Takes at least half the viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* Subtle gradient reflecting the warm orange glow */
+    background: linear-gradient(
+            135deg,
+            rgba(13, 13, 13, 0.9) 40%,
+            rgba(255, 69, 0, 0.3) 100%
+    );
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-bottom: 2rem; /* Space below the header */
+}
+
+/*
+  Profile Image
+  - Rounded, with a subtle border that matches the orange highlight.
+*/
+header .profile-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/*
+  Main Heading
+*/
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+/*
+  Subtitle under the name
+*/
+header .subtitle {
+    font-size: 1.1rem;
+    color: var(--muted-text-color);
+}
+
+/*
+  ============================
+  Navigation Bar
+  ============================
+  - Sticky nav stays at the top.
+  - Links are spaced out and have a smooth hover animation.
+*/
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 999; /* Ensure the nav is above other elements */
+    background-color: #111; /* Slightly different from main bg to stand out */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/*
+  Navigation Links
+  - We use flexbox to space them out and center them horizontally.
+*/
+.navigation-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; /* Space out each link */
+    height: 60px;
+}
+
+/*
+  Individual link styles:
+  - Uppercase, letter spacing, modern hover animation.
+*/
+.navigation-links a {
+    color: var(--text-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    position: relative;
+    transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+/*
+  Smooth underline animation:
+  - The ::before pseudo-element grows in width on hover.
+*/
+.navigation-links a::before {
+    content: "";
+    position: absolute;
+    bottom: -3px;         /* Position the line just under the text */
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width var(--transition-speed) ease;
+}
+
+/*
+  Hover effects:
+  - Change text color to orange.
+  - Slightly scale the text.
+  - Extend the underline.
+*/
+.navigation-links a:hover {
+    color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+.navigation-links a:hover::before {
+    width: 100%;
+}
+
+/*
+  ============================
+  Main Sections
+  ============================
+  - We use ID-based selectors (#bio, #education, #skills, #projects)
+    since the HTML uses those IDs.
+  - Each section has vertical padding to create spacing.
+*/
+
+/* Generic section styling for top-level sections */
+section {
+    padding: var(--section-padding) 0;
+}
+
+/* ========== Bio Section ========== */
+#bio h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+#bio p {
+    max-width: 800px;
+    margin: 0 auto; /* Center the text block */
+}
+
+/* ========== Education Section ========== */
+#education h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/*
+  Classes for the different schools:
+  - Adds a bit of spacing between each education entry.
+*/
+.SF-State,
+.Canada-College {
+    margin-bottom: 2rem;
+}
+
+/*
+  Education subheadings get the secondary orange color.
+*/
+#education h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* ========== Skills Section ========== */
+#skills {
+    background: #1A1A1A; /* Slightly lighter than body bg for contrast */
+    text-align: center;
+}
+
+#skills h2 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+/*
+  Skills List:
+  - Displayed as a horizontal or wrapped set of badges.
+*/
+.list-of-skills {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style-type: none;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+/*
+  Individual skill items:
+  - Subtle background that changes on hover.
+*/
+.list-of-skills li {
+    background: #222;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background var(--transition-speed) ease;
+}
+
+.list-of-skills li:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+/* ========== Projects Section ========== */
+#projects {
+    background: #141414; /* Another subtle variation from the main bg */
+    text-align: center;
+}
+
+#projects h2 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+/*
+  Project Template Grid:
+  - Auto-fitting columns to ensure a responsive layout.
+*/
+.project-template {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    max-width: 1000px;
+    margin: 0 auto; /* Center the grid container */
+}
+
+/*
+  Individual Project Box:
+  - Slight box shadow on hover.
+*/
+.project-box {
+    background: #1A1A1A;
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: box-shadow var(--transition-speed) ease;
+}
+
+.project-box:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.project-box h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+/*
+  ============================
+  Footer
+  ============================
+  - Keep it simple and aligned in the center.
+*/
+footer {
+    background: #111;
+    color: var(--muted-text-color);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 2rem; /* Space above the footer */
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/*
+  ============================
+  Responsive Media Queries
+  ============================
+  - Adjust layout and font sizes for smaller screens.
+*/
+
+/*
+  At 992px and below, we reduce some font sizes
+  or rearrange certain elements as needed.
+*/
+@media (max-width: 992px) {
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+/*
+  At 768px and below, we further adjust spacing,
+  reduce nav link gap, etc.
+*/
+@media (max-width: 768px) {
+    .navigation-links {
+        gap: 1rem;
+    }
+
+    header .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Decrease section padding on smaller devices */
+    section {
+        padding: var(--section-padding-mobile) 0;
+    }
+}
+
+/*
+  At 480px and below, we stack nav links vertically
+  and fine-tune text sizes.
+*/
+@media (max-width: 480px) {
+    .navigation-links {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .navigation-links a {
+        margin: 10px 0;
+    }
+}
