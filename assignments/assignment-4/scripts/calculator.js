@@ -47,10 +47,16 @@ function compute() {
         currentOperator = null;
         previousDisplay = '';
     } catch (error) {
-        alert('Unable to do calculation')
+        alert('Unable to do calculation');
         currentDisplay = '';
         previousDisplay = '';
     }
+    if (currentValue === 0) {
+        currentDisplay = '';
+        previousDisplay = '';
+        alert("Cannot divide by zero");
+    }
+
 }
 
 function operatorSelector(operators) {
