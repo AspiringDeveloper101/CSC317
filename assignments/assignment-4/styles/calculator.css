@@ -20,6 +20,7 @@
 .calculator-container {
     background-color: #000000;
     height: 100vh;
+    width: 100vw;
     display: grid;
     justify-content: center;
     align-content: center;
@@ -125,4 +126,38 @@ footer {
     color: var(--primary-text-color);
     text-align: center;
     padding-bottom: 20px;
+}
+
+@media (max-width: 412px) {
+
+    .calculator-container {
+        width: 80%;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 15px;
+        gap: 8px;
+    }
+
+    .display {
+        padding: 0.75rem;
+        max-height: 25px;
+        margin-bottom: 50px;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 1rem;
+        border-radius: 50%;
+    }
+
+    nav {
+        align-content: center;
+    }
+
+    nav .Back-to-portfolio-link {
+        text-align: center;
+    }
+
+    footer {
+        text-align: center;
+    }
 }
