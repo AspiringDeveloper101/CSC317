@@ -4,7 +4,7 @@
 **Student ID:** 923788837
 **GitHub Username:** AspiringDeveloper101
 **GitHub Repository:** https://github.com/AspiringDeveloper101/CSC317.git
-**GitHub Pages Url:** https://aspiringdeveloper101.github.io/CSC317/assignments/final
+**GitHub Pages Url:** https://aspiringdeveloper101.github.io/CSC317/assignments/final/index.html
 
 ## Reflection
 During the group project, I learned how to collaborate with my group to complete a project
